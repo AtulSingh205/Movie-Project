@@ -14,7 +14,7 @@ async  function fetchData(endPoint,setState){
     let result = await store.json();
     let update = (result.results);
     setState(update);
-    console.log("chl rh hai fnction")
+    console.log("chl rh hai fnction");
   }
   console.log(popular);
   console.log(toprated);
@@ -24,7 +24,7 @@ async  function fetchData(endPoint,setState){
     fetchData("popular",setPopular);
     fetchData("top_rated",setTopRated);
     fetchData("upcoming",setUpcoming);
-    fetchData("now_playing",setPlaying)
+    fetchData("now_playing",setPlaying);
   },[])
 
   return (
