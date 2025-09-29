@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Store } from "../../Context/Sbkamalikek";
 
 const Search = () => {
-    const {search,setSearch}=useContext(Store)
+    const {search,setSearch}=useContext(Store);
     return (
         <div className="flex justify-center ">
             <div className="mt-5">

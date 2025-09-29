@@ -11,7 +11,7 @@ const Sbkamalikek = (props) => {
 async  function fetchData(endPoint,setState){
     let Api_Key = "bffed64d39d2ed688b89f1b5fcdddcb6"
     let store = await fetch(`https://api.themoviedb.org/3/movie/${endPoint}?api_key=${Api_Key} `)
-    let result = await store.json()
+    let result = await store.json();
     let update = (result.results);
     setState(update);
     console.log("chl rh hai fnction")

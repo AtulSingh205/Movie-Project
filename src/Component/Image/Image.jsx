@@ -5,7 +5,7 @@ const Image = () => {
     const {nowPlaying}=useContext(Store)
   return (
     <div>
-      <div className='flex gap-4  overflow-x-auto hide-scrollbar mt-5'>
+      <div className='flex gap-4  overflow-x-auto hide-scrollbar mt-10'>
         {nowPlaying.map((itm)=>(
             <div    key={itm.id}
             className="min-w-[250px] h-[150px] bg-gray-900 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300">
@@ -14,8 +14,7 @@ const Image = () => {
               alt={itm.title}
               className="w-full h-[250px] object-cover"
             />
-            </div>
-           
+            </div>   
         ))}
       </div>
     </div>
