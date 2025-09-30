@@ -1,11 +1,14 @@
-import React from 'react'
-
-const Slidebar = () => {
+export default function Slidebar({ children }) {
   return (
-    <div className=''>
-      <img className='h-12 w-10' src='https://cdn-icons-png.flaticon.com/128/11394/11394404.png'></img>
-    </div>
+    <>
+      <aside className="h-screen">
+        <nav className="h-full flex flex-col bg-white border-r shadow-sm">
+          <div className="p-4 pb-2 flex justify-between items-center">
+
+          </div>
+        </nav>
+
+      </aside>
+    </>
   )
 }
-
-export default Slidebar
