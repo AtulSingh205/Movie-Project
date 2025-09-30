@@ -8,9 +8,9 @@ const Popular = () => {
     let updated = popular.map((itm) =>
       itm.id === Id ? { ...itm, isFav: !itm.isFav } : itm
     );
-    setPopular(updated);
+    setPopular(updated)
 
-    let clickitm = updated.find((itm) => itm.id === Id);
+    let clickitm = updated.find((itm) => itm.id === Id)
 
     if (clickitm) {
       if (clickitm.isFav) {
