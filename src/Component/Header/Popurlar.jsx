@@ -7,7 +7,7 @@ const Popular = () => {
 
     let updated = popular.map((itm) =>
       itm.id === Id ? { ...itm, isFav: !itm.isFav } : itm
-    );
+    )
     setPopular(updated)
 
     let clickitm = updated.find((itm) => itm.id === Id)
