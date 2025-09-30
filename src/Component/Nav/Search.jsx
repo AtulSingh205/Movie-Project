@@ -4,7 +4,7 @@ import { Store } from "../../Context/Sbkamalikek";
 const Search = () => {
     const {search,setSearch}=useContext(Store);
     return (
-        <div className="flex justify-center ">
+        <div className="flex justify-between ">
             <div className="mt-5">
                 <input
                 value={search}

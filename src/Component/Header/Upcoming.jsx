@@ -2,18 +2,25 @@ import React, { useContext } from 'react'
 import { Store } from '../../Context/Sbkamalikek'
 
 const Upcoming = () => {
-  const { Upcoming } = useContext(Store)
+  const { upcoming } = useContext(Store)
 
   return (
     <div className="px-6">
       <h1 className="font-bold text-2xl text-amber-100 ml-4 mb-4">Upcoming 🎬</h1>
 
       <div className="flex gap-4 overflow-x-auto hide-scrollbar">
-        {Upcoming.map((itm) => (
+        {upcoming.map((itm) => (
           <div
             key={itm.id}
             className="min-w-[180px] rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-300 relative group"
           >
+              <div className="absolute top-2 right-2 z-20">
+              <img
+                className="w-6 h-6"
+                src="https://cdn-icons-png.flaticon.com/128/10307/10307888.png"
+                alt="heart"
+              />
+            </div>
             {/* Poster image */}
             <img
               src={`https://image.tmdb.org/t/p/w500${itm.poster_path}`}

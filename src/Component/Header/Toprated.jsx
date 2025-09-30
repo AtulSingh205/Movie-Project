@@ -12,8 +12,15 @@ const Toprated = () => {
         {toprated.map((movie) => (
           <div
             key={movie.id}
-            className="min-w-[160px] bg-gray-900 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300"
+            className="relative  min-w-[160px] bg-gray-900 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300"
           >
+            <div className="absolute top-2 right-2 z-20">
+              <img
+                className="w-6 h-6"
+                src="https://cdn-icons-png.flaticon.com/128/10307/10307888.png"
+                alt="heart"
+              />
+            </div>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}

@@ -1,39 +1,49 @@
-import React, { createContext, useEffect, useState } from 'react'
-import Popular from '../Component/Header/Popurlar';
+import React, { createContext, useEffect, useState } from 'react';
 export const Store = createContext(null);
+
 const Sbkamalikek = (props) => {
-  const [popular, setPopular]= useState([])
-  const [toprated,setTopRated]=useState([])
-  const [Upcoming,setUpcoming]=useState([])
-  const [nowPlaying,setPlaying]=useState([])
-  const [search,setSearch]=useState("")
+  const [popular, setPopular] = useState([]);
+  const [toprated, setTopRated] = useState([]);
+  const [upcoming, setUpcoming] = useState([]);
+  const [nowPlaying, setPlaying] = useState([]);
+  const [search, setSearch] = useState("");
+  const [Wishlist,setWishlist]=useState([]);
+  let Api_Key = "bffed64d39d2ed688b89f1b5fcdddcb6";
 
-async  function fetchData(endPoint,setState){
-    let Api_Key = "bffed64d39d2ed688b89f1b5fcdddcb6"
-    let store = await fetch(`https://api.themoviedb.org/3/movie/${endPoint}?api_key=${Api_Key} `)
+  async function fetchData(endPoint, setState) {
+    let url = `https://api.themoviedb.org/3/movie/${endPoint}?api_key=${Api_Key}`;
+    let store = await fetch(url);
     let result = await store.json();
-    let update = (result.results);
-    setState(update);
-    console.log("chl rh hai fnction");
+    setState(result.results || []);
   }
-  console.log(popular);
-  console.log(toprated);
 
-  
-  useEffect(()=>{
-    fetchData("popular",setPopular);
-    fetchData("top_rated",setTopRated);
-    fetchData("upcoming",setUpcoming);
-    fetchData("now_playing",setPlaying);
-  },[])
+  useEffect(() => {
+    fetchData("popular", setPopular);
+    fetchData("top_rated", setTopRated);
+    fetchData("upcoming", setUpcoming);
+    fetchData("now_playing", setPlaying);
+  }, []);
+
+  // ✅ Search filter logic
+  function filterMovies(list) {
+    if (!search) return list; // agar search empty hai to full list
+    return list.filter((movie) =>
+      movie.title.toLowerCase().includes(search.toLowerCase())
+    );
+  }
 
   return (
-    <div>
-      <Store.Provider value={{popular,setPopular,toprated,setTopRated,search,setSearch,Upcoming,setUpcoming,nowPlaying}}>
-        {props.children}
-      </Store.Provider>
-    </div>
+    <Store.Provider value={{
+      popular: filterMovies(popular),setPopular,
+      toprated: filterMovies(toprated),
+      upcoming: filterMovies(upcoming),
+      nowPlaying: filterMovies(nowPlaying),
+      search, setSearch,
+      Wishlist,setWishlist
+    }}>
+      {props.children}
+    </Store.Provider>
   )
 }
 
-export default Sbkamalikek
+export default Sbkamalikek;
