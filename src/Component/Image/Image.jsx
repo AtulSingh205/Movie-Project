@@ -3,20 +3,20 @@ import { Store } from '../../Context/Sbkamalikek'
 
 const Image = () => {
   const { nowPlaying } = useContext(Store)
-  const [index, setIndex] = useState(0) // starting index
+  const [index, setIndex] = useState(0) 
 
-  // Har 3 second me image index update hoga
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) =>
         prevIndex + 1 < nowPlaying.length ? prevIndex + 1 : 0
       )
-    }, 3000) // 3000ms = 3 sec
+    }, 3000) 
 
     return () => clearInterval(interval)
   }, [nowPlaying])
 
-  // sirf ek hi image show karna hai
+  
   const currentImg = nowPlaying[index]
 
   return (
