@@ -12,10 +12,8 @@ const Nav = () => {
         <Slidebar />
       </div>
 
-      <Link to='/Search'>
         <Search />
-      </Link>
-      {/* Heart icon navigates to /wishlist */}
+      
       <div className='mt-4  mr-10 flex gap-9 '>
         <Link to="/wishlist">
           <img className='h-12 w-12 cursor-pointer animate-bounce' src="https://cdn-icons-png.flaticon.com/128/10307/10307888.png" alt="Wishlist" />
@@ -23,9 +21,7 @@ const Nav = () => {
         <div className='flex gap-2' >
           <Languge />
           <Signup />
-
         </div>
-
       </div>
     </div>
   )
