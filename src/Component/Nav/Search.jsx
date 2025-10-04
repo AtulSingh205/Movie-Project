@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Store } from "../../Context/Sbkamalikek";
+import { Store } from "../../Context/Sbkamalikek"
 
 const Search = () => {
-    const {search,setSearch}=useContext(Store);
+    const {search,setSearch}=useContext(Store)
     return (
         <div className="flex justify-between ">
             <div className="mt-5">

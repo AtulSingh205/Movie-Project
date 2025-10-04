@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Store } from '../../Context/Sbkamalikek'
 
 const Wishlist = () => {
-  const { Wishlist } = useContext(Store);
+  const { Wishlist } = useContext(Store)
 
   return (
     <div className="px-6 py-6">
