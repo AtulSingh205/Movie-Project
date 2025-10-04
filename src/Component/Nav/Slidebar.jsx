@@ -28,7 +28,6 @@ export default function Slidebar() {
             </button>
           </div>
 
-          {/* Menu Items */}
           <ul className="flex-1 px-4 py-6 space-y-4 text-amber-950 font-medium">
             <li>
               <Link to="/" className="flex items-center gap-3 hover:text-blue-600">
@@ -89,7 +88,6 @@ export default function Slidebar() {
         </nav>
       </aside>
 
-      {/* Open Sidebar Button */}
       <button
         onClick={() => setOpen(true)}
         className="p-2 rounded-md hover:bg-blue-900 text-white z-40 relative"

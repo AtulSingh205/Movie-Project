@@ -2,12 +2,12 @@ import React, { createContext, useEffect, useState } from 'react';
 export const Store = createContext(null);
 
 const Sbkamalikek = (props) => {
-  const [popular, setPopular] = useState([]);
-  const [toprated, setTopRated] = useState([]);
-  const [upcoming, setUpcoming] = useState([]);
-  const [nowPlaying, setPlaying] = useState([]);
-  const [search, setSearch] = useState("");
-  const [Wishlist,setWishlist]=useState([]);
+  const [popular, setPopular] = useState([])
+  const [toprated, setTopRated] = useState([])
+  const [upcoming, setUpcoming] = useState([])
+  const [nowPlaying, setPlaying] = useState([])
+  const [search, setSearch] = useState("")
+  const [Wishlist,setWishlist]=useState([])
   let Api_Key = "bffed64d39d2ed688b89f1b5fcdddcb6";
 
   async function fetchData(endPoint, setState) {
